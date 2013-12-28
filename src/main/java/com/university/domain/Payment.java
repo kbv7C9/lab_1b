@@ -1,4 +1,4 @@
-package com.univercity.domain;
+package com.university.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,11 +8,8 @@ import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 
 /**
- * Created with IntelliJ IDEA.
- * User: KVB
- * Date: 14.12.13
- * Time: 20:09
- * To change this template use File | Settings | File Templates.
+ * Автор: Касьяненко Борис
+ * Entity объекта платеж
  */
 
 @Entity
@@ -22,7 +19,7 @@ public class Payment {
     private long id;  // Идентификатор платежа
     private String payer;  // Человек, совершивший платеж
     private String recipient; // Человек, получивший деньги
-    private long number;  // Количество денег в платеже
+    private String number;  // Количество денег в платеже
 
     @Id
     @GeneratedValue(generator="increment")
@@ -55,11 +52,11 @@ public class Payment {
     }
 
     @Column(name="number")
-    public long getNumber(){
+    public String getNumber(){
         return this.number;
     }
 
-    public void setNumber(long number){
+    public void setNumber(String number){
         this.number = number;
     }
 }
